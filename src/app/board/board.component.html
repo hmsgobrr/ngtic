@@ -1,0 +1,14 @@
+<h1>Turn: <span style="color: #fff;">{{ player }}</span></h1>
+
+<button mat-stroked-button color="warn" (click)="newGame()">New Game</button>
+
+<h2 *ngIf="winner"><span style="color: #fff;">{{ winner }}</span> wins!</h2>
+<h2 *ngIf="tie">It's a tie!</h2>
+
+<main>
+    <app-square
+        *ngFor="let val of squares; let i = index"
+        [val]="val"
+        (click)="move(i)">
+    </app-square>
+</main>
